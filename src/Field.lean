@@ -1,7 +1,7 @@
 class Field (α : Type) :=
 (equals : α → α → Prop)
 (reflexive_equals : ∀ a, equals a a)
-(symmetric_equals : ∀ a b, equals a b ↔ equals b a)
+(symmetric_equals : ∀ a b, equals a b → equals b a)
 (transitive_equals : ∀ a b c, equals a b → equals b c → equals a c)
 (add : α → α → α)
 (mul : α → α → α)

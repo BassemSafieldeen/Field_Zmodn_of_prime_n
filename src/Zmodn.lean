@@ -9,8 +9,6 @@ structure Zmodn : Type :=
 (Z : ℤ)
 (k : ℤ)
 
--- Example: 5 mod 6?
-def five : Zmodn := ⟨5, 0⟩
 def zero : Zmodn := ⟨0, 0⟩
 def one  : Zmodn := ⟨1, 0⟩
 
@@ -39,13 +37,8 @@ lemma reflexive_equals :
 by {intro, simp [equals]}
 
 lemma symmetric_equals :
-∀ a b, (a =ₘ b) ↔ (b =ₘ a) :=
-begin
-  intros,
-  split,
-  intro h, simp [equals, h.symm],
-  intro h, simp [equals, h.symm],
-end
+∀ a b, (a =ₘ b) → (b =ₘ a) :=
+by {intros a b h, rw equals at *, rw h.symm}
 
 lemma transitive_equals :
 ∀ a b c, (a =ₘ b) → (b =ₘ c) → (a =ₘ c) :=
