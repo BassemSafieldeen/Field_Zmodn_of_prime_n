@@ -1,0 +1,8 @@
+[package]
+name = "Field-over-Zmodn-for-prime-n"
+version = "0.1"
+lean_version = "leanprover-community/lean:3.45.0"
+path = "src"
+
+[dependencies]
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "eb55b1e999249f2a24fe9a1e9dde2beedc983821"}
